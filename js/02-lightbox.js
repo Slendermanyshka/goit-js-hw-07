@@ -11,6 +11,7 @@ let imgMarkup = galleryItems.map(({preview, original, description}) => {
 galleryList.insertAdjacentHTML('beforeend', imgMarkup);
 
 /*galleryList.addEventListener('click', imageClick);
+
 function imageClick(event){
     console.log(event.target); 
     event.preventDefault();*/
