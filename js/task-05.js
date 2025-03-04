@@ -1,11 +1,19 @@
-let name_output = document.querySelector('#name-output');
-const name_input = document.querySelector('#name-input');
-
-name_input.addEventListener("input", (event) => {
-if(name_input.value===""){
-name_output.textContent = `Anonymous`;
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+// }
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
 }
-else {
-    name_output.textContent = event.currentTarget.value;}
-});
+const bodyEl = document.querySelector('body');
+const buttonCol = document.querySelector('.change-color');
+const spanCol = document.querySelector('.color');
 
+buttonCol.addEventListener('click', changeColor);
+
+function changeColor(event){
+  let color = getRandomHexColor();
+  bodyEl.style.backgroundColor = color;
+  spanCol.textContent = `${color}`;
+}
